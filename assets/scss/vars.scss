@@ -1,0 +1,20 @@
+$primary-color: #003B46;
+$secondary-color: #66A5AD;
+$light-color: #F8F1E5;
+
+$theme-colors: (
+        "primary": $primary-color,
+        "secondary": $secondary-color,
+);
+
+$background-color: #FAC31B;
+
+$title-font: "Roboto mono", sans-serif;
+$text-font: "Roboto slab", sans-serif;
+$nav-font: "Raleway", sans serif;
+
+@mixin text($font-family, $font-weight, $font-size) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+}
