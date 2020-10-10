@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25cee516-6622-46bd-9d2f-e5bdb73c790f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Damien-graphic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Damien-graphic.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +132,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-csrf" />
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gNL90Hr6xiIvwW1AlmSmUgeY5u" />
@@ -151,6 +157,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -165,6 +172,11 @@
       <workItem from="1597996022701" duration="79000" />
       <workItem from="1598016331924" duration="676000" />
       <workItem from="1598017701860" duration="9000" />
+      <workItem from="1600417643606" duration="280000" />
+      <workItem from="1601113806112" duration="923000" />
+      <workItem from="1601363825728" duration="31000" />
+      <workItem from="1601536606935" duration="117000" />
+      <workItem from="1601621949557" duration="16000" />
     </task>
     <servers />
   </component>
@@ -172,6 +184,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2271" y="572" width="567" height="357" key="#Notifications" timestamp="1601536711286">
+      <screen x="1600" y="207" width="1920" height="1080" />
+    </state>
+    <state x="2271" y="572" width="567" height="357" key="#Notifications/67.27.1533.873/1600.207.1920.1080@1600.207.1920.1080" timestamp="1601536711286" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598017708682">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
