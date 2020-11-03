@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "2bfa2106fd0691ba81add96dfe1b6524",
@@ -1222,6 +1222,7 @@
                 "reflection",
                 "static"
             ],
+            "abandoned": "roave/better-reflection",
             "time": "2020-03-27T11:06:43+00:00"
         },
         {
@@ -1279,16 +1280,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "v3.1.4",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "0aa01dc03f1938bc2f249d3fe686f040fa86b747"
+                "reference": "1894c5901fd7d2b57c399f9a06c8b51422034949"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/0aa01dc03f1938bc2f249d3fe686f040fa86b747",
-                "reference": "0aa01dc03f1938bc2f249d3fe686f040fa86b747",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/1894c5901fd7d2b57c399f9a06c8b51422034949",
+                "reference": "1894c5901fd7d2b57c399f9a06c8b51422034949",
                 "shasum": ""
             },
             "require": {
@@ -1358,7 +1359,13 @@
                 "backend",
                 "generator"
             ],
-            "time": "2020-09-01T06:17:47+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/javiereguiluz",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-10-09T17:50:20+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -6993,5 +7000,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
