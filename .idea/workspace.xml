@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25cee516-6622-46bd-9d2f-e5bdb73c790f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="25cee516-6622-46bd-9d2f-e5bdb73c790f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,6 +130,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gNL90Hr6xiIvwW1AlmSmUgeY5u" />
@@ -183,6 +183,7 @@
       <workItem from="1603091077346" duration="235000" />
       <workItem from="1603212955304" duration="2150000" />
       <workItem from="1604422675197" duration="2542000" />
+      <workItem from="1604505618621" duration="4192000" />
     </task>
     <servers />
   </component>
@@ -202,5 +203,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598017708682" />
+    <state x="419" y="209" width="824" height="515" key="IDE.errors.dialog" timestamp="1604508509524">
+      <screen x="72" y="27" width="1528" height="873" />
+    </state>
+    <state x="419" y="209" width="824" height="515" key="IDE.errors.dialog/72.27.1528.873/1600.207.1920.1080@72.27.1528.873" timestamp="1604508509524" />
   </component>
 </project>

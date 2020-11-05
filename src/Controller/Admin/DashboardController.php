@@ -3,6 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Informations;
+use App\Entity\Projets;
+use App\Entity\Services;
+use App\Entity\SocialMedia;
+use App\Repository\SocialMediaRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -31,6 +35,9 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Informations', 'fa fa-user', Informations::class);
+        yield MenuItem::linkToCrud('Projects', 'fa fa-folder', Projets::class);
+        yield MenuItem::linkToCrud('Services', 'fa fa-tools', Services::class);
+        yield MenuItem::linkToCrud('SocialMedia', 'fa fa-hashtag', SocialMedia::class);
         // yield MenuItem::linkToCrud('The Label', 'icon class', EntityClass::class);
     }
 }
