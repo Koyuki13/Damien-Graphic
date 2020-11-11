@@ -3,10 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\ImagesRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ImagesRepository::class)
+ * @Vich\Uploadable
  */
 class Images
 {
@@ -19,41 +23,52 @@ class Images
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
-    private $picture;
+    private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Projets::class, inversedBy="images")
-     * @ORM\JoinColumn(nullable=false)
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @var File
      */
-    private $projetId;
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var DateTime
+     */
+    public $updatedAt;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getPicture(): ?string
+    public function setImageFile(File $image = null)
     {
-        return $this->picture;
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new DateTime('now');
+        }
     }
 
-    public function setPicture(string $picture): self
+    public function getImageFile()
     {
-        $this->picture = $picture;
-
-        return $this;
+        return $this->imageFile;
     }
 
-    public function getProjetId(): ?Projets
+    public function setImage($image)
     {
-        return $this->projetId;
+        $this->image = $image;
     }
 
-    public function setProjetId(?Projets $projetId): self
+    public function getImage()
     {
-        $this->projetId = $projetId;
-
-        return $this;
+        return $this->image;
     }
 }

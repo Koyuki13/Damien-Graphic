@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Images;
 use App\Entity\Informations;
 use App\Entity\Projets;
 use App\Entity\Services;
@@ -38,6 +39,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Projects', 'fa fa-folder', Projets::class);
         yield MenuItem::linkToCrud('Services', 'fa fa-tools', Services::class);
         yield MenuItem::linkToCrud('SocialMedia', 'fa fa-hashtag', SocialMedia::class);
+        yield MenuItem::linkToCrud('Images', 'fa fa-images', Images::class);
         // yield MenuItem::linkToCrud('The Label', 'icon class', EntityClass::class);
     }
 }

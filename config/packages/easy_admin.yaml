@@ -1,0 +1,25 @@
+easy_admin:
+  entities:
+    Images:
+      class: App/Entity/Images
+      form:
+        fields:
+
+      new:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+          - { property: 'image', template: 'vich_uploader_image.html.twig' }
+          - { property: 'imageFile', type: 'file' }
+          - { property: 'imageFile', type: 'vich_image' }
+          - { property: 'updateAt', type: 'date' }
+
+      edit:
+        title:  'Edit image'
+
+      list:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+          - { property: 'image', template: 'vich_uploader_image.html.twig' }
+          - { property: 'imageFile', type: 'file' }
+          - { property: 'imageFile', type: 'vich_image' }
+
