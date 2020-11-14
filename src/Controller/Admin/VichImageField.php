@@ -6,7 +6,6 @@ namespace App\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class VichImageField implements FieldInterface
 {
@@ -16,9 +15,6 @@ class VichImageField implements FieldInterface
     {
         return (new self())
             ->setProperty($propertyName)
-            ->setTemplatePath('')
-            ->setLabel($label)
-            ->setFormType(VichImageType::class);
+            ->setLabel($label);
     }
-
 }

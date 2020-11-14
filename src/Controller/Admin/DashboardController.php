@@ -7,7 +7,6 @@ use App\Entity\Informations;
 use App\Entity\Projets;
 use App\Entity\Services;
 use App\Entity\SocialMedia;
-use App\Repository\SocialMediaRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
