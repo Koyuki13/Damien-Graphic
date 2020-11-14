@@ -15,9 +15,12 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+<<<<<<< HEAD
     <data-source name="@localhost" uuid="36552a68-24b1-4b77-9717-72e4b25a37df">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
       <schema-mapping />
     </data-source>
+=======
+>>>>>>> d57771a5d4eb5c7a45d2df7113a160f43bfb77e1
   </component>
 </project>
