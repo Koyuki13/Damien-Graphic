@@ -3,10 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\ImagesRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ImagesRepository::class)
+ * @Vich\Uploadable
  */
 class Images
 {
@@ -18,42 +22,79 @@ class Images
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
-    private $picture;
+    private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Projets::class, inversedBy="images")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=255)
+     * @var string
      */
-    private $projetId;
+    private $name;
+
+    /**
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var DateTime
+     */
+    public $updatedAt;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getPicture(): ?string
+    public function setImageFile(File $image = null)
     {
-        return $this->picture;
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+//             if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new DateTime('now');
+        }
     }
 
-    public function setPicture(string $picture): self
+    public function getImageFile()
     {
-        $this->picture = $picture;
+        return $this->imageFile;
+    }
 
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
         return $this;
     }
 
-    public function getProjetId(): ?Projets
+    public function getImage()
     {
-        return $this->projetId;
+        return $this->image;
     }
 
-    public function setProjetId(?Projets $projetId): self
+    /**
+     * @return string
+     */
+    public function getName(): string
     {
-        $this->projetId = $projetId;
+        return $this->name;
+    }
 
+    /**
+     * @param string $name
+     * @return Images
+     */
+    public function setName(string $name): Images
+    {
+        $this->name = $name;
         return $this;
     }
+
 }
