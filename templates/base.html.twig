@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Damien Louvrier - {% block title %}{% endblock %}</title>
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 </head>
 <body>
 {% block header %}
 {% endblock %}
 
-{% block main %}
-{% endblock main %}
+{% include 'parts/_navbar.html.twig' %}
 
+<div class="container">
+    {% block main %}
+    {% endblock main %}
+</div>
 {% block footer %}
 {% endblock %}
 
