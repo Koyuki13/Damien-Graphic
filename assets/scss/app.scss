@@ -1,4 +1,5 @@
 @import "vars";
+@import "home";
 
 @import "~bootstrap/scss/bootstrap";
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
@@ -21,4 +22,8 @@ html {
 
 body {
   background-color: $background-color;
+}
+
+img {
+  width: 100%;
 }
