@@ -1,11 +1,15 @@
 .home {
+  height :auto;
 
-
-  .right{
-
+  .right, .left {
+    margin  : 0 !important;
+    padding : 0 !important;
   }
-  .left img{
-    object-fit: contain;
-    object-position: top;
+
+  .left {
+    img {
+      object-fit      : contain;
+      object-position : top;
+    }
   }
 }
