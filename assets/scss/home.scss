@@ -1,0 +1,24 @@
+.home {
+  height : auto;
+
+
+  .left {
+    img {
+      object-fit      : contain;
+      object-position : top;
+    }
+  }
+
+  .right {
+    h1 {
+      font-size : $size-md;
+    }
+
+    .image-profile {
+      img {
+        height     : 450px;
+        object-fit : contain;
+      }
+    }
+  }
+}
