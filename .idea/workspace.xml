@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25cee516-6622-46bd-9d2f-e5bdb73c790f" name="Default Changelist" comment="" />
+    <list default="true" id="25cee516-6622-46bd-9d2f-e5bdb73c790f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,11 +210,12 @@
       <workItem from="1605361845906" duration="6628000" />
       <workItem from="1605967179190" duration="3358000" />
       <workItem from="1606239317242" duration="5353000" />
+      <workItem from="1606413134111" duration="321000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2271" y="572" width="567" height="357" key="#Notifications" timestamp="1601536711286">
