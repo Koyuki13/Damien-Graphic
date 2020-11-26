@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25cee516-6622-46bd-9d2f-e5bdb73c790f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/vars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/5fb91ec098f35497369135.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/5fb9208ad90fc253697199.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/5fb921b99f155170900934.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/5fb92a013514f020724848.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="25cee516-6622-46bd-9d2f-e5bdb73c790f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,7 +206,7 @@
       <workItem from="1605286486453" duration="1448000" />
       <workItem from="1605361845906" duration="6628000" />
       <workItem from="1605967179190" duration="3358000" />
-      <workItem from="1606239317242" duration="4726000" />
+      <workItem from="1606239317242" duration="5353000" />
     </task>
     <servers />
   </component>
