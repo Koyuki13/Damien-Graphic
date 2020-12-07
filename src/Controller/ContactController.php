@@ -5,17 +5,24 @@ namespace App\Controller;
 use App\Form\ContactType;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
 
 class ContactController extends AbstractController
 {
 
-    /**
-     *@Route("/contact", name="contact")
-     */
+   /**
+    * @Route("/contact", name="contact")
+    * @param Request         $request
+    * @param MailerInterface $mailer
+    * @return RedirectResponse|Response
+    * @throws TransportExceptionInterface
+    */
     public function contact(Request $request, MailerInterface $mailer)
     {
         $form = $this->createForm(ContactType::class);
@@ -29,7 +36,7 @@ class ContactController extends AbstractController
                 ->subject('Un nouveau message vient d\'arriver!')
 
                 // path of the Twig template to render
-                //->htmlTemplate('home/email/notifications.html.twig')
+                ->htmlTemplate('contact/email/notifications.html.twig')
 
                 // pass variables (name => value) to the template
                 ->context([
@@ -43,7 +50,7 @@ class ContactController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        return $this->render("home/index.html.twig", [
+        return $this->render("contact/contact.html.twig", [
             'form' => $form->createView(),
         ]);
     }

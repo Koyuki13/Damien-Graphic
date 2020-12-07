@@ -1,5 +1,6 @@
 @import "vars";
 @import "home";
+@import "contact";
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -25,8 +26,30 @@ body {
   padding          : 0;
   background-color : $background-color;
   min-height       : 100vh;
+  font-size        : $font-size;
 }
 
 img {
   width : 100%;
+}
+
+
+input,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color        : $primary-color;
+  -webkit-text-fill-color : $background-color;
+  border-width            : 0;
+  transition              : background-color 5000s ease-in-out 0s;
+  outline                 : none;
+  appearance              : none;
 }
