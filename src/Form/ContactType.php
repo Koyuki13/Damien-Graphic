@@ -42,7 +42,7 @@ class ContactType extends AbstractType
             'attr' => [
                'placeholder' => 'Mon message',
                'class' => 'form-control',
-               'rows' => 5
+               'rows' => 8
             ]
          ]);
    }
