@@ -18,7 +18,7 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => [
                'placeholder' => 'DOE John',
-               'class' => 'form-control',
+               'class' => 'form-control font-italic',
             ]
          ])
          ->add('email', EmailType::class, [
@@ -26,14 +26,14 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => [
                'placeholder' => 'chapeaupointu@laposte.net',
-               'class' => 'form-control',
+               'class' => 'form-control font-italic',
             ]
          ])
          ->add('phone', TextType::class, [
             'label' => 'Téléphone',
             'attr' => [
-               'placeholder' => '01.01.01.01.01',
-               'class' => 'form-control',
+               'placeholder' => '01.02.03.04.05',
+               'class' => 'form-control font-italic',
             ]
          ])
          ->add('message', TextareaType::class, [
@@ -41,7 +41,7 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => [
                'placeholder' => 'Mon message',
-               'class' => 'form-control',
+               'class' => 'form-control font-italic',
                'rows' => 9
             ]
          ]);
