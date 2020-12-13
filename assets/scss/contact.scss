@@ -28,6 +28,10 @@ form.contact-form {
     flex-direction   : column;
     background-color : $background-color;
 
+    .form-group {
+      margin-bottom : 0;
+    }
+
     .content-form {
       display        : flex;
       flex-direction : column;
@@ -41,6 +45,12 @@ form.contact-form {
 
     button {
       border-radius : 0;
+    }
+
+    .contact-info {
+      display         : flex;
+      flex-direction  : column;
+      justify-content : space-around;
     }
 
     .contact-info, .contact-message {
