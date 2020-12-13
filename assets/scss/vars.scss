@@ -22,6 +22,7 @@ $size             : $size-xs * 2;
 $size-md          : $size-xs * 3;
 $size-lg          : $size-xs * 4;
 $size-xl          : $size-xs * 5;
+$size-xxl         : 8rem;
 
 @mixin text($font-family, $font-weight, $font-size) {
   font-family : $font-family;

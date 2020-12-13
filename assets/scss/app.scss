@@ -33,6 +33,10 @@ img {
   width : 100%;
 }
 
+.form-group input,
+.form-group input:focus {
+  color : $background-color;
+}
 
 input,
 input:-webkit-autofill,
