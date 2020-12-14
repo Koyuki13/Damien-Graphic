@@ -30,14 +30,10 @@ class Projets
     private $description;
 
     /**
-     * @ORM\Column(type="datetime")
-     */
-    private $createdAt;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="projetId")
+     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="name")
      */
     private $images;
+
 
     public function __construct()
     {
@@ -73,17 +69,6 @@ class Projets
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Images[]

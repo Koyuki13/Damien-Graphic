@@ -29,7 +29,7 @@ class Images
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @var string
+     * @ORM\ManyToOne(targetEntity="Projets::class", inversedBy="images")
      */
     private $name;
 
