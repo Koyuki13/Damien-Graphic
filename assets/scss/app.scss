@@ -1,6 +1,7 @@
 @import "vars";
 @import "home";
 @import "contact";
+@import "flash";
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -34,7 +35,9 @@ img {
 }
 
 .form-group input,
-.form-group input:focus {
+.form-group input:focus,
+.form-group textarea,
+.form-group textarea:focus {
   color : $background-color;
 }
 

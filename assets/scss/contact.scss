@@ -11,6 +11,14 @@
   }
 }
 
+.form-group > ul {
+  list-style-type  : none;
+  color            : $danger-color;
+  font-style       : italic;
+  margin-top       : $size-xs;
+  font-size        : $font-size-small;
+  padding          : .15rem 0;
+}
 
 form.contact-form {
   position       : relative;
@@ -76,7 +84,7 @@ form.contact-form {
   }
   form.contact-form {
     margin-top : $size-xxl;
-    height     : 80vh;
+    height     : 70vh;
 
     .contact-wrapper .content-form {
       flex-direction : row;

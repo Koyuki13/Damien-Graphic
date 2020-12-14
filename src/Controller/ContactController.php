@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
 use App\Form\ContactType;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -23,52 +24,28 @@ class ContactController extends AbstractController
     * @return RedirectResponse|Response
     * @throws TransportExceptionInterface
     */
-    public function contact(Request $request, MailerInterface $mailer)
-    {
-        $form = $this->createForm(ContactType::class);
-        $form->handleRequest($request);
+   public function contact(Request $request, MailerInterface $mailer)
+   {
+      $contact = new Contact();
+      $form = $this->createForm(ContactType::class, $contact);
+      $form->handleRequest($request);
+      if ($form->isSubmitted() && $form->isValid()) {
+         $data = $form->getData();
+         $email = (new Email())
+            ->from('noreply@damiengraphic.com')
+            ->to('contact@damiengraphic.fr')
+            ->subject('Nouvelle demande de contact !')
+            ->html($this->renderView("contact/email/notifications.html.twig", [
+               'data' => $data
+            ]), "utf-8");
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
-            $email = (new TemplatedEmail())
-                ->from('your_email@example.com')
-                ->to('your_email@example.com')
-                ->subject('Un nouveau message vient d\'arriver!')
+         $mailer->send($email);
+         $this->addFlash('success', 'Votre email a bien été envoyé');
+         return $this->redirectToRoute('home');
+      }
 
-                // path of the Twig template to render
-                ->htmlTemplate('contact/email/notifications.html.twig')
-
-                // pass variables (name => value) to the template
-                ->context([
-                    'data' => $data,
-                ])
-            ;
-            $mailer->send($email);
-            $entityManager = $this->getDoctrine()->getManager();
-
-
-            return $this->redirectToRoute('home');
-        }
-
-        return $this->render("contact/contact.html.twig", [
-            'form' => $form->createView(),
-        ]);
-    }
-//$defaultData = ['message' => 'Type your message here'];
-//$form = $this->createFormBuilder($defaultData)
-//->add('name', TextType::class)
-//->add('email', EmailType::class)
-//->add('message', TextareaType::class)
-//->add('send', SubmitType::class)
-//->getForm();
-//
-//$form->handleRequest($request);
-//
-//if ($form->isSubmitted() && $form->isValid()) {
-//// data is an array with "name", "email", and "message" keys
-//$data = $form->getData();
-//}
-//
-//// ... render the form
-//}
+      return $this->render("contact/contact.html.twig", [
+         'form' => $form->createView(),
+      ]);
+   }
 }

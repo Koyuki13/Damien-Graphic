@@ -13,8 +13,10 @@ const $ = require('jquery');
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
 
-$(document).ready(function() {
+$(document).ready(() => {
     $('[data-toggle="popover"]').popover();
+    $('.toast').toast({delay: 2500});
+    $('.toast').toast('show');
 });
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
