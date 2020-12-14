@@ -3,12 +3,14 @@ $secondary-color  : #888487;
 $light-color      : #9CAFC2;
 $dark-color       : #2F3131;
 $danger-color     : #e01b1b;
+$success-color    : #2fa526;
 
 $theme-colors     : (
         "primary": $primary-color,
         "secondary": $secondary-color,
         "dark": $dark-color,
-        "danger": $danger-color
+        "danger": $danger-color,
+        "success": $success-color
 );
 
 $background-color : #FEFEFE;
