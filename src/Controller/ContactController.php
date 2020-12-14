@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
 use App\Form\ContactType;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,9 +26,10 @@ class ContactController extends AbstractController
     */
    public function contact(Request $request, MailerInterface $mailer)
    {
-      $form = $this->createForm(ContactType::class);
+      $contact = new Contact();
+      $form = $this->createForm(ContactType::class, $contact);
       $form->handleRequest($request);
-      if ($form->isSubmitted()) {
+      if ($form->isSubmitted() && $form->isValid()) {
          $data = $form->getData();
          $email = (new Email())
             ->from('your_email@example.com')

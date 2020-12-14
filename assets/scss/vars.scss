@@ -2,11 +2,13 @@ $primary-color    : #15597E;
 $secondary-color  : #888487;
 $light-color      : #9CAFC2;
 $dark-color       : #2F3131;
+$danger-color     : #e01b1b;
 
 $theme-colors     : (
         "primary": $primary-color,
         "secondary": $secondary-color,
-        "dark": $dark-color
+        "dark": $dark-color,
+        "danger": $danger-color
 );
 
 $background-color : #FEFEFE;
@@ -15,6 +17,7 @@ $title-font       : "Roboto mono", sans-serif;
 $text-font        : "Roboto slab", sans-serif;
 $nav-font         : "Raleway", sans serif;
 $font-size        : 14px;
+$font-size-small  : 12px;
 
 // spaces
 $size-xs          : .5rem;
