@@ -31,6 +31,7 @@ class ContactType extends AbstractType
          ])
          ->add('phone', TextType::class, [
             'label' => 'Téléphone',
+            'required' => false,
             'attr' => [
                'placeholder' => '01.02.03.04.05',
                'class' => 'form-control font-italic',
