@@ -43,7 +43,7 @@ img {
 
 input::-webkit-input-placeholder,
 input::-ms-input-placeholder,
-input:placeholder,
+input::placeholder,
 input:-ms-input-placeholder,
 input::-moz-placeholder,
 input:-moz-placeholder {
