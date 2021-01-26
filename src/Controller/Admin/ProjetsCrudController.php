@@ -17,14 +17,10 @@ class ProjetsCrudController extends AbstractCrudController
 
    public function configureFields(string $pageName): iterable
    {
-      $description = TextEditorField::new('description');
-      $title = TextField::new('title', 'Nom du projet');
-      $images = AssociationField::new('images');
-
-      return [
-         $title,
-         $description,
-         $images
-      ];
+       return [
+           TextField::new('title', 'Titre du projet'),
+           TextEditorField::new('description', 'Description'),
+           //AssociationField::new('images'),
+       ];
    }
 }
