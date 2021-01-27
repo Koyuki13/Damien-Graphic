@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\ProjetsRepository;
+use App\Repository\ProjetRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ProjetsRepository::class)
+ * @ORM\Entity(repositoryClass=ProjetRepository::class)
  */
-class Projets
+class Projet
 {
     /**
      * @ORM\Id()
@@ -30,10 +30,9 @@ class Projets
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="name")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="projet")
      */
     private $images;
-
 
     public function __construct()
     {
@@ -69,35 +68,34 @@ class Projets
         return $this;
     }
 
-
     /**
-     * @return Collection|Images[]
+     * @return Collection|Image[]
      */
     public function getImages(): Collection
     {
         return $this->images;
     }
 
-    public function addImage(Images $image): self
+    public function addImage(Image $image): self
     {
         if (!$this->images->contains($image)) {
             $this->images[] = $image;
-            $image->setProjetId($this);
+            $image->setProjet($this);
         }
 
         return $this;
     }
 
-    public function removeImage(Images $image): self
+    public function removeImage(Image $image): self
     {
-        if ($this->images->contains($image)) {
-            $this->images->removeElement($image);
+        if ($this->images->removeElement($image)) {
             // set the owning side to null (unless already changed)
-            if ($image->getProjetId() === $this) {
-                $image->setProjetId(null);
+            if ($image->getProjet() === $this) {
+                $image->setProjet(null);
             }
         }
 
         return $this;
     }
+
 }
