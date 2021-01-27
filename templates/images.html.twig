@@ -1,0 +1,13 @@
+<div class="form-widget">
+    {% for image in field.value %}
+        <a href="#" class="ea-lightbox-thumbnail">
+            <img src="/uploads/images/{{ image.image }}" alt="{{ image.id }}">
+        </a>
+
+        <div id="ea-lightbox-{{ image.id }}" class="ea-lightbox">
+            <img src="/uploads/images/{{ image.image }}" alt="{{ image.id }}">
+        </div>
+
+    {% endfor %}
+
+</div>
