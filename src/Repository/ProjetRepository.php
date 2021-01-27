@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Projets;
+use App\Entity\Projet;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Projets|null find($id, $lockMode = null, $lockVersion = null)
- * @method Projets|null findOneBy(array $criteria, array $orderBy = null)
- * @method Projets[]    findAll()
- * @method Projets[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Projet|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Projet|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Projet[]    findAll()
+ * @method Projet[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ProjetsRepository extends ServiceEntityRepository
+class ProjetRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Projets::class);
+        parent::__construct($registry, Projet::class);
     }
 
     // /**
-    //  * @return Projets[] Returns an array of Projets objects
+    //  * @return Projet[] Returns an array of Projet objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ProjetsRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Projets
+    public function findOneBySomeField($value): ?Projet
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
