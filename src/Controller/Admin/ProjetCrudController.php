@@ -14,24 +14,28 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ProjetCrudController extends AbstractCrudController
 {
-   public static function getEntityFqcn(): string
-   {
-      return Projet::class;
-   }
+    public static function getEntityFqcn(): string
+    {
+        return Projet::class;
+    }
 
-   public function configureFields(string $pageName): iterable
-   {
-       return [
-           TextField::new('title', 'Titre du projet'),
-           TextEditorField::new('description', 'Description'),
-           CollectionField::new('images')
-               ->setEntryType(ImageType::class)
-               ->onlyOnForms()
-       ];
-   }
+    public function configureFields(string $pageName): iterable
+    {
+        return [
+            TextField::new('title', 'Titre du projet'),
+            TextEditorField::new('description', 'Description'),
+            CollectionField::new('images')
+                ->setEntryType(ImageType::class)
+                ->setFormTypeOption('by_reference', false)
+                ->onlyOnForms(),
+            CollectionField::new('images')
+                ->setTemplatePath('images.html.twig')
+                ->onlyOnDetail()
+        ];
+    }
 
-   public function configureActions(Actions $actions): Actions
-   {
-       return $actions->add(CRUD::PAGE_INDEX, 'detail');
-   }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions->add(CRUD::PAGE_INDEX, 'detail');
+    }
 }
