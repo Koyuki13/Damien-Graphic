@@ -3,6 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Projet;
+use App\Form\ImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
@@ -21,8 +24,14 @@ class ProjetCrudController extends AbstractCrudController
        return [
            TextField::new('title', 'Titre du projet'),
            TextEditorField::new('description', 'Description'),
-           //AssociationField::new('images'),
-           CollectionField::new('images')->onlyOnForms()
+           CollectionField::new('images')
+               ->setEntryType(ImageType::class)
+               ->onlyOnForms()
        ];
+   }
+
+   public function configureActions(Actions $actions): Actions
+   {
+       return $actions->add(CRUD::PAGE_INDEX, 'detail');
    }
 }

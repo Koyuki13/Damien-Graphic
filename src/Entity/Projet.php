@@ -30,7 +30,7 @@ class Projet
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="projet")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="projet", cascade={"persist", "remove"})
      */
     private $images;
 
@@ -89,7 +89,6 @@ class Projet
     public function removeImage(Image $image): self
     {
         if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
             if ($image->getProjet() === $this) {
                 $image->setProjet(null);
             }
