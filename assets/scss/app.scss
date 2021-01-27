@@ -64,7 +64,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   background-color        : $primary-color;
-  -webkit-text-fill-color : $background-color;
+  -webkit-text-fill-color : $dark-color;
   border-width            : 0;
   transition              : background-color 5000s ease-in-out 0s;
   outline                 : none;
