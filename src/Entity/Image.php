@@ -30,7 +30,7 @@ class Image
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
-     * @var File
+     * @var File|null
      */
     private $imageFile;
 

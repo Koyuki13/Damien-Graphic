@@ -1,0 +1,26 @@
+@import "vars";
+
+.card {
+  position : relative;
+  overflow : hidden;
+  cursor   : pointer;
+
+  img {
+    object-fit : contain;
+  }
+
+  .card-img-overlay {
+    position         : absolute;
+    left             : 0;
+    right            : 0;
+    top              : 100%;
+    bottom           : 0;
+    background-color : rgba($primary-color, .6);
+    color            : $background-color;
+    transition       : top .5s ease;
+  }
+
+  &:hover .card-img-overlay {
+    top : 0;
+  }
+}

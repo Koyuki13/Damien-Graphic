@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Hello ProjetController!{% endblock %}
+
+{% block main %}
+   <div class="container">
+      <div class="row">
+
+         {# {% for image in images %} #}
+         {# {% if image.projet is not null %} #}
+         {# <div class="card col-3 p-4 m-2"> #}
+         {# <img src="{{ asset('uploads/images/' ~ image.image) }}" class="card-img" alt="..."> #}
+         {# <div class="card-img-overlay text-center d-flex flex-column justify-content-around"> #}
+         {# <h5 class="card-title font-weight-bold">{{ image.projet.title }}</h5> #}
+         {# <a href="#" class="btn btn-primary">Voir le projet</a> #}
+         {# </div> #}
+         {# </div> #}
+         {# {% endif %} #}
+         {# {% endfor %} #}
+
+         <hr>
+
+         <section class="container projet my-5">
+            <h2 class="text-center">Mes différents projets</h2>
+            <div class="d-flex flex-wrap justify-content-center mt-4 justify-content-lg-between">
+               {% for projet in projets %}
+                  {{ dump(vich_uploader_asset(projet, 'thumbnailFile')) }}
+                  <div class="my-4 mx-3 col-lg-3 col-md-4 col-10 p-0">
+                     <div class="hovereffect">
+                        <img class="img-responsive" src="{{ vich_uploader_asset(projet, 'thumbnailFile') }}"
+                             alt="{{ projet.title }}">
+                        <div class="overlay">
+                           <h2 class="text-break overflow-auto">{{ projet.title }}</h2>
+                           <p>
+                              <a href="#" class="btn btn-primary">En savoir plus</a>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               {% endfor %}
+            </div>
+         </section>
+
+      </div>
+   </div>
+{% endblock %}
+
+{% block stylesheets %}
+   {{ parent() }}
+   {{ encore_entry_link_tags('projets') }}
+{% endblock %}
