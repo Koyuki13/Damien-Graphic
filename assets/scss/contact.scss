@@ -1,0 +1,119 @@
+.bg-contact {
+  top        : 80px;
+  left       : 100px;
+  width      : 100%;
+  max-width  : 1000px;
+  max-height : 550px;
+
+  img {
+    height     : 200px;
+    object-fit : cover;
+  }
+}
+
+.form-group > ul {
+  list-style-type  : none;
+  color            : $danger-color;
+  font-style       : italic;
+  margin-top       : $size-xs;
+  font-size        : $font-size-small;
+  padding          : .15rem 0;
+}
+
+form.contact-form {
+  position       : relative;
+  max-width      : 800px;
+  margin-left    : auto;
+  display        : flex;
+  align-items    : center;
+  flex-direction : column;
+
+  .contact-wrapper {
+    border           : 1px solid $dark-color;
+    padding          : $size-lg 0;
+    display          : flex;
+    width            : 100%;
+    flex-direction   : column;
+    background-color : $background-color;
+
+    .form-group {
+      margin-bottom : 0;
+    }
+
+    .content-form {
+      display        : flex;
+      flex-direction : column;
+    }
+
+    .form-control {
+      font-size        : 14px;
+      border-radius    : 0;
+      background-color : $primary-color;
+    }
+
+    button {
+      border-radius : 0;
+    }
+
+    .contact-info {
+      display         : flex;
+      flex-direction  : column;
+      justify-content : space-around;
+    }
+
+    .contact-info, .contact-message {
+      width         : 100%;
+      padding-left  : $size;
+      padding-right : $size;
+    }
+  }
+
+  .content-submit {
+    margin-left  : $size;
+    margin-right : $size;
+  }
+}
+
+@media screen and (min-width : 1000px) {
+  .bg-contact {
+    position : absolute;
+
+    img {
+      height : 400px;
+    }
+  }
+  form.contact-form {
+    margin-top : $size-xxl;
+    height     : 70vh;
+
+    .contact-wrapper .content-form {
+      flex-direction : row;
+    }
+
+    .contact-wrapper {
+      padding : $size-lg;
+    }
+  }
+  form.contact-form .content-submit {
+    margin-left  : auto;
+    margin-right : 0;
+
+    .form-group {
+      width        : 335px;
+      margin-left  : 1rem;
+      margin-right : 1rem;
+      display      : flex;
+    }
+  }
+}
+
+@media screen and (min-width : 2500px) {
+  .bg-contact {
+    max-width  : 50%;
+    min-height : 100%;
+
+    img {
+      height : 100%;
+    }
+  }
+}

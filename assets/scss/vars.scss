@@ -1,20 +1,36 @@
-$primary-color: #15597E;
-$secondary-color: #888487;
-$light-color: #9CAFC2;
+$primary-color    : #15597E;
+$secondary-color  : #888487;
+$light-color      : #9CAFC2;
+$dark-color       : #2F3131;
+$danger-color     : #e01b1b;
+$success-color    : #2fa526;
 
-$theme-colors: (
+$theme-colors     : (
         "primary": $primary-color,
         "secondary": $secondary-color,
+        "dark": $dark-color,
+        "danger": $danger-color,
+        "success": $success-color
 );
 
-$background-color: #FEFEFE;
+$background-color : #FEFEFE;
 
-$title-font: "Roboto mono", sans-serif;
-$text-font: "Roboto slab", sans-serif;
-$nav-font: "Raleway", sans serif;
+$title-font       : "Roboto mono", sans-serif;
+$text-font        : "Roboto slab", sans-serif;
+$nav-font         : "Raleway", sans serif;
+$font-size        : 14px;
+$font-size-small  : 12px;
+
+// spaces
+$size-xs          : .5rem;
+$size             : $size-xs * 2;
+$size-md          : $size-xs * 3;
+$size-lg          : $size-xs * 4;
+$size-xl          : $size-xs * 5;
+$size-xxl         : 8rem;
 
 @mixin text($font-family, $font-weight, $font-size) {
-  font-family: $font-family;
-  font-weight: $font-weight;
-  font-size: $font-size;
+  font-family : $font-family;
+  font-weight : $font-weight;
+  font-size   : $font-size;
 }

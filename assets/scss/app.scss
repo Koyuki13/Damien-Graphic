@@ -1,7 +1,11 @@
 @import "vars";
+@import "home";
+@import "contact";
+@import "flash";
 
 @import "~bootstrap/scss/bootstrap";
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+
+$fa-font-path : '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/regular';
@@ -12,13 +16,57 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto+Mono&family=Roboto+Slab:wght@300;400;500&display=swap');
 
 
-
 html {
-  height: 100%;
-  scroll-behavior: smooth;
-  background-color: $background-color;
+  min-height       : 100vh;
+  scroll-behavior  : smooth;
+  background-color : $background-color;
 }
 
 body {
-  background-color: $background-color;
+  margin           : 0;
+  padding          : 0;
+  background-color : $background-color;
+  min-height       : 100vh;
+  font-size        : $font-size;
+}
+
+img {
+  width : 100%;
+}
+
+.form-group input,
+.form-group input:focus,
+.form-group textarea,
+.form-group textarea:focus {
+  color : $background-color;
+}
+
+input::-webkit-input-placeholder,
+input::-ms-input-placeholder,
+input::placeholder,
+input:-ms-input-placeholder,
+input::-moz-placeholder,
+input:-moz-placeholder {
+  color   : $background-color; /*Change the placeholder color*/
+  opacity : 0.7; /*Change the opacity between 0 and 1*/
+}
+
+input,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color        : $primary-color;
+  -webkit-text-fill-color : $dark-color;
+  border-width            : 0;
+  transition              : background-color 5000s ease-in-out 0s;
+  outline                 : none;
+  appearance              : none;
 }

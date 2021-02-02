@@ -1,7 +1,24 @@
 {% extends 'layout.html.twig' %}
 
 {% block title "Graphiste" %}
+{% set info = information[0] %}
 
 {% block main %}
-<h1>Welcome home</h1>
+    <div class="home d-lg-flex">
+        <div class="left col-12 col-lg-6 d-none d-md-block ">
+            <img src="{{ asset('uploads/images/5fbfec18df537956730584.jpg') }}" alt="image de fond">
+        </div>
+        <div class="right col-12 col-lg-6">
+            <div class="image-profile mt-5">
+                <img src="{{ asset('uploads/images/' ~ info.picture) }}" alt="{{ info.imageName }}">
+            </div>
+            <div class="body-progile m-md-5">
+                <h1>{{ info.fullname }} - {{ info.job }}</h1>
+                <p>
+                    {{ info.description | raw | nl2br }}
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+

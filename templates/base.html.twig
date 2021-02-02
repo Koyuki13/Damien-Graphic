@@ -12,15 +12,27 @@
     {% endblock %}
 </head>
 <body>
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header {{ label }}">
+                <strong class="mr-auto">{{ label }}</strong>
+            </div>
+            <div class="toast-body">
+                {{ message }}
+            </div>
+        </div>
+    {% endfor %}
+{% endfor %}
+
 {% block header %}
 {% endblock %}
 
 {% include 'parts/_navbar.html.twig' %}
 
-<div class="container">
-    {% block main %}
-    {% endblock main %}
-</div>
+{% block main %}
+{% endblock main %}
 {% block footer %}
 {% endblock %}
 
