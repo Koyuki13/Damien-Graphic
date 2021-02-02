@@ -10,17 +10,24 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ImageType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('imageFile', VichFileType::class)
-        ;
-    }
+   public function buildForm(FormBuilderInterface $builder, array $options)
+   {
+      $builder
+         ->add('imageFile', VichFileType::class, [
+            'label' => 'Image à télécharger',
+            'help' => 'Le fichier ne doit pas dépasser ' . Image::MAX_SIZE,
+            'required' => false,
+            'allow_delete' => false,
+            'download_uri' => false,
+            'download_link' => false,
+            'delete_label' => 'Supprimer cette image',
+         ]);
+   }
 
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'data_class' => Image::class,
-        ]);
-    }
+   public function configureOptions(OptionsResolver $resolver)
+   {
+      $resolver->setDefaults([
+         'data_class' => Image::class,
+      ]);
+   }
 }

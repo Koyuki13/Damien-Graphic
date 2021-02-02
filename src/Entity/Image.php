@@ -7,6 +7,7 @@ use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -15,117 +16,124 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Image
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+   const MAX_SIZE = "2000k";
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @var string
-     */
-    private $image;
+   /**
+    * @ORM\Id()
+    * @ORM\GeneratedValue()
+    * @ORM\Column(type="integer")
+    */
+   private $id;
 
-    /**
-     * @Vich\UploadableField(mapping="images", fileNameProperty="image")
-     * @var File|null
-     */
-    private $imageFile;
+   /**
+    * @ORM\Column(type="string", length=255, nullable=true)
+    * @var string
+    */
+   private $image;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    public $updatedAt;
+   /**
+    * @Vich\UploadableField(mapping="images", fileNameProperty="image")
+    * @var File|null
+    * @Assert\File(maxSize = Image::MAX_SIZE,
+    *     maxSizeMessage="Le fichier est trop gros  ({{ size }} {{ suffix }}),
+    * il ne doit pas dépasser {{ limit }} {{ suffix }}",
+    *     mimeTypes = {"image/jpeg", "image/jpg", "image/gif","image/png"},
+    *     mimeTypesMessage = "Veuillez entrer un type de fichier valide: jpg, jpeg, png ou gif.")
+    */
+   private $imageFile;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Projet::class, inversedBy="images")
-     */
-    private $projet;
+   /**
+    * @ORM\Column(type="datetime")
+    */
+   public $updatedAt;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $name;
+   /**
+    * @ORM\ManyToOne(targetEntity=Projet::class, inversedBy="images")
+    */
+   private $projet;
 
-    public function __construct()
-    {
-        $this->updatedAt = new \DateTime();
-    }
+   /**
+    * @ORM\Column(type="string", length=255, nullable=true)
+    */
+   private $name;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+   public function __construct()
+   {
+      $this->updatedAt = new \DateTime();
+   }
 
-    /**
-     * @param mixed $imageFile
-     * @throws Exception
-     */
-    public function setImageFile($imageFile): void
-    {
-        $this->imageFile = $imageFile;
-        if ($imageFile) {
-            $this->updatedAt = new \DateTime();
-        }
-    }
+   public function getId(): ?int
+   {
+      return $this->id;
+   }
 
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
+   /**
+    * @param mixed $imageFile
+    * @throws Exception
+    */
+   public function setImageFile($imageFile): void
+   {
+      $this->imageFile = $imageFile;
+      if ($imageFile) {
+         $this->updatedAt = new \DateTime();
+      }
+   }
 
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
-        return $this;
-    }
+   public function getImageFile(): ?File
+   {
+      return $this->imageFile;
+   }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
+   public function setImage(?string $image): self
+   {
+      $this->image = $image;
+      return $this;
+   }
 
-    /**
-     * @return DateTime
-     */
-    public function getUpdatedAt(): DateTime
-    {
-        return $this->updatedAt;
-    }
+   public function getImage(): ?string
+   {
+      return $this->image;
+   }
 
-    /**
-     * @param DateTime $updatedAt
-     */
-    public function setUpdatedAt(DateTime $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
-    }
+   /**
+    * @return DateTime
+    */
+   public function getUpdatedAt(): DateTime
+   {
+      return $this->updatedAt;
+   }
 
-    public function getProjet(): ?Projet
-    {
-        return $this->projet;
-    }
+   /**
+    * @param DateTime $updatedAt
+    */
+   public function setUpdatedAt(DateTime $updatedAt): void
+   {
+      $this->updatedAt = $updatedAt;
+   }
 
-    public function setProjet(?Projet $projet): self
-    {
-        $this->projet = $projet;
+   public function getProjet(): ?Projet
+   {
+      return $this->projet;
+   }
 
-        return $this;
-    }
+   public function setProjet(?Projet $projet): self
+   {
+      $this->projet = $projet;
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
+      return $this;
+   }
 
-    public function setName(?string $name): self
-    {
-        $this->name = $name;
+   public function getName(): ?string
+   {
+      return $this->name;
+   }
 
-        return $this;
-    }
+   public function setName(?string $name): self
+   {
+      $this->name = $name;
+
+      return $this;
+   }
 
 
 }

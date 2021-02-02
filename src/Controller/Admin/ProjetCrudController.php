@@ -23,14 +23,14 @@ class ProjetCrudController extends AbstractCrudController
 
    public function configureFields(string $pageName): iterable
    {
-      $imageField = CollectionField::new('images')
-         ->setTemplatePath('images.html.twig')
-         ->onlyOnDetail();
-
       $image = CollectionField::new('images')
          ->setEntryType(ImageType::class)
          ->setFormTypeOption('by_reference', false)
          ->onlyOnForms();
+
+      $imageField = CollectionField::new('images')
+         ->setTemplatePath('images.html.twig')
+         ->onlyOnDetail();
 
       $fields = [
          TextField::new('title', 'Titre du projet'),
@@ -38,6 +38,7 @@ class ProjetCrudController extends AbstractCrudController
          CollectionField::new('images')
             ->setEntryType(ImageType::class)
             ->setFormTypeOption('by_reference', false)
+            ->setFormType('choice')
             ->onlyOnForms(),
          CollectionField::new('images')
             ->setTemplatePath('images.html.twig')
