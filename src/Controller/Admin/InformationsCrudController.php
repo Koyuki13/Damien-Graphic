@@ -28,10 +28,6 @@ class InformationsCrudController extends AbstractCrudController
             ImageField::new('picture')
                 ->setFormType(VichImageType::class)
                 ->setBasePath('uploads/images/')->hideOnForm(),
-//            ImageField::new('imageFile', 'Image')
-//                ->onlyOnForms()
-//                ->setFormType(VichImageType::class)
-//                ->setBasePath('uploads/images/'),
         ];
     }
 }
