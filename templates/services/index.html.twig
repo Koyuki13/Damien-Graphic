@@ -2,14 +2,14 @@
 {% block title 'Mes services' %}
 {% block main %}
     <div class="container mt-4">
-        <h1>Mes services</h1>
+        <h1 class="text-center">Mes services</h1>
         {% for service in services %}
             <article class="row my-5">
                 <div class="col-4">
                     <img class="m-3" src="{{ asset('uploads/images/' ~ service.image) | imagine_filter('sizeOne') }}"
                          alt="{{ service.name }}">
                 </div>
-                <div class="col-8 body-service">
+                <div class="col-8 mt-3 body-service">
                     <h2>{{ service.name }}</h2>
                     <p>{{ service.description | raw | nl2br }}</p>
                 </div>
