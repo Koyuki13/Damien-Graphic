@@ -3,14 +3,13 @@
 {% block main %}
     <div class="container mt-4">
         <h1>Mes services</h1>
-        {{ dump(services) }}
         {% for service in services %}
-            <article class="row">
+            <article class="row my-5">
                 <div class="col-4">
-                    <img src="{{ asset('uploads/images/' ~ service.image) | imagine_filter('sizeOne') }}"
+                    <img class="m-3" src="{{ asset('uploads/images/' ~ service.image) | imagine_filter('sizeOne') }}"
                          alt="{{ service.name }}">
                 </div>
-                <div class="col-8">
+                <div class="col-8 body-service">
                     <h2>{{ service.name }}</h2>
                     <p>{{ service.description | raw | nl2br }}</p>
                 </div>
