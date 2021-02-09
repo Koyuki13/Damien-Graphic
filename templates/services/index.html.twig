@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Mes services' %}
+
+{% block main %}
+   <div class="container mt-4">
+      <h1>Mes services</h1>
+      {{ dump(services) }}
+      {% for service in services %}
+         <article class="row">
+            <div class="col-4">
+               <img src="{{ asset('uploads/images/' ~ service.image) | imagine_filter('sizeOne') }}"
+                    alt="{{ service.name }}">
+            </div>
+            <div class="col-8">
+               <h2>{{ service.name }}</h2>
+               <p>{{ service.description | raw | nl2br }}</p>
+            </div>
+         </article>
+      {% endfor %}
+   </div>
+
+{% endblock %}
