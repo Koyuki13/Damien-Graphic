@@ -1,0 +1,15 @@
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  img {
+    width: 100%;
+  }
+  .text {
+    width: 100%;
+  }
+  .block {
+    max-width: 350px;
+  }
+}
