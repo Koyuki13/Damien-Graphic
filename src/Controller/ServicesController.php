@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Services;
 use App\Repository\ServicesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
