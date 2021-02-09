@@ -4,6 +4,9 @@
     <div class="container mt-4">
         <h1 class="text-center">Mes services</h1>
         {% for service in services %}
+            {% if loop.index == 2 %}
+                {% include 'parts/callToAction.html.twig' %}
+            {% endif %}
             <article class="row my-5">
                 <div class="col-4">
                     <img class="m-3" src="{{ asset('uploads/images/' ~ service.image) | imagine_filter('sizeOne') }}"
