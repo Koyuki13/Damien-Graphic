@@ -1,7 +1,8 @@
 article {
-  &:nth-child(odd) {
+  &.odd {
     display        : flex;
     flex-direction : row-reverse;
+
     .body-service {
       text-align : right;
     }
