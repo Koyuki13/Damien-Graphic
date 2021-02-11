@@ -10,8 +10,8 @@ liip_imagine:
             quality: 95 # Qualité de l'image
             filters: # Liste des filtres à appliquer
                 upscale:
-                    min: [ 280,280 ]
+                    min: [ 320,180 ]
                 thumbnail:
-                    size: [ 300,300 ]
+                    size: [ 320,180 ]
                     mode: outbound
 
