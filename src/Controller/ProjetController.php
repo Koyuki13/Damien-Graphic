@@ -24,4 +24,19 @@ class ProjetController extends AbstractController
          'images' => $imageRepository->findAll()
       ]);
    }
+
+   /**
+    * @Route("/detail/{id}", name="detail", methods={"GET"})
+    * @param Projet          $projet
+    * @param ImageRepository $imageRepository
+    * @param int             $id
+    * @return Response
+    */
+   public function detail(Projet $projet, ImageRepository $imageRepository, int $id): Response
+   {
+      return $this->render('projet/detail.html.twig', [
+         'project' => $projet,
+         'images' => $imageRepository->findBy(['projet' => $id])
+      ]);
+   }
 }

@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Detail{% endblock %}
+{% block main %}
+   <div class="container">
+      <h1>{{ project.title }}</h1>
+      <div class="col mb-3">
+         <div class="card p-2 w-75">
+            {% for image in project.images | slice(0,1) %}
+               <img src="{{ asset('uploads/images/' ~ image.image) | imagine_filter('sizeOne') }}"
+               class="card-img" alt="{{ image.name }}">
+            {% endfor %}
+         </div>
+      </div>
+      <p>{{ project.description | raw }}</p>
+      {% for image in project.images | slice(1,project.images|length) %}
+         <div class="col mb-3">
+            <div class="card p-2">
+               <img src="{{ asset('uploads/images/' ~ image.image) | imagine_filter('sizeOne') }}"
+                    class="card-img" alt="...">
+               <div class="card-img-overlay text-center d-flex flex-column justify-content-around">
+                  <h5 class="card-title font-weight-bold">{{ image.projet.title }}</h5>
+                  <a href="#" class="btn btn-dark d-block">Voir le projet</a>
+               </div>
+               <div class="show-mobil d-md-none text-center pt-2">
+                  <a href="#" class="btn btn-sm btn-dark">
+                     Voir le projet</a></div>
+            </div>
+         </div>
+      {% endfor %}
+   </div>
+{% endblock %}
