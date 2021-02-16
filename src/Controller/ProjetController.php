@@ -14,29 +14,24 @@ class ProjetController extends AbstractController
    /**
     * @Route("/projet", name="projet")
     * @param ProjetRepository $projetRepository
-    * @param ImageRepository  $imageRepository
     * @return Response
     */
-   public function index(ProjetRepository $projetRepository, ImageRepository $imageRepository): Response
+   public function index(ProjetRepository $projetRepository): Response
    {
       return $this->render('projet/index.html.twig', [
-         'projets' => $projetRepository->findAll(),
-         'images' => $imageRepository->findAll()
+         'projects' => $projetRepository->findAll(),
       ]);
    }
 
    /**
     * @Route("/detail/{id}", name="detail", methods={"GET"})
     * @param Projet          $projet
-    * @param ImageRepository $imageRepository
-    * @param int             $id
     * @return Response
     */
-   public function detail(Projet $projet, ImageRepository $imageRepository, int $id): Response
+   public function detail(Projet $projet): Response
    {
       return $this->render('projet/detail.html.twig', [
          'project' => $projet,
-         'images' => $imageRepository->findBy(['projet' => $id])
       ]);
    }
 }
