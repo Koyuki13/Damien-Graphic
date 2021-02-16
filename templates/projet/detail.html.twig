@@ -2,6 +2,7 @@
 {% block title %}Detail{% endblock %}
 {% block main %}
    <div class="container">
+      <a href="{{ path('projet') }}" class="btn btn-sm"><i class="fas fa-long-arrow-alt-left"></i> Retour</a>
       <h1 class="text-center mt-4">{{ project.title }}</h1>
       <div class="my-4">
          <p>{{ project.description | raw }}</p>
