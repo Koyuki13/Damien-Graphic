@@ -32,6 +32,11 @@ body {
   font-size        : $font-size;
 }
 
+.main {
+  max-width : 2000px;
+  margin    : auto;
+}
+
 img {
   width : 100%;
 }
