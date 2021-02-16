@@ -1,11 +1,17 @@
-.home {
-  height : auto;
+body {
+  overflow : hidden;
+}
 
+.home {
 
   .left {
+    padding : 0;
+    height  : 100vh;
+
     img {
-      object-fit      : contain;
+      object-fit      : cover;
       object-position : top;
+      height          : 100vh;
     }
   }
 

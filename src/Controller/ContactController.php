@@ -33,7 +33,7 @@ class ContactController extends AbstractController
          $data = $form->getData();
          $email = (new Email())
             ->from('noreply@damiengraphic.com')
-            ->to('contact@damiengraphic.fr')
+            ->to('louvrierdam@gmail.com')
             ->subject('Nouvelle demande de contact !')
             ->html($this->renderView("contact/email/notifications.html.twig", [
                'data' => $data
