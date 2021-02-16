@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Detail{% endblock %}
+{% block main %}
+   <div class="container">
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.description | raw }}</p>
+      <div class="col mb-3">
+         <div class="card p-2 w-75">
+            {% for image in project.images | slice(0,1) %}
+               <img src="{{ asset('uploads/images/' ~ image.image) | imagine_filter('sizeOne') }}"
+                    class="card-img" alt="{{ image.name }}">
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+{% endblock %}
