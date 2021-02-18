@@ -1,6 +1,9 @@
 {% extends 'layout.html.twig' %}
+
 {% block title %}Detail{% endblock %}
+
 {% block main %}
+
    <div class="container">
       <a href="{{ path('projet') }}" class="btn btn-sm"><i class="fas fa-chevron-left"></i> Retour</a>
       <h1 class="text-center mt-4">{{ project.title }}</h1>
@@ -8,15 +11,29 @@
          <p>{{ project.description | raw }}</p>
       </div>
 
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-         {% for image in project.images %}
-            <div class="col mb-3">
-               <div class="card p-2">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         </ol>
+         <div class="carousel-inner">
+            {% for image in project.images %}
+               <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
                   <img src="{{ asset('uploads/images/' ~ image.image) | imagine_filter('sizeOne') }}"
-                       class="card-img" alt="...">
+                       class="d-block" alt="slide">
                </div>
-            </div>
-         {% endfor %}
+            {% endfor %}
+         </div>
+         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+         </a>
+         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+         </a>
       </div>
    </div>
+
 {% endblock %}
