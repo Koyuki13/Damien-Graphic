@@ -12,11 +12,13 @@
       </div>
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            {% for image in project.images %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" {% if loop.index == 1 %} class="active" {% endif %}></li>
+            {% endfor %}
          </ol>
+
          <div class="carousel-inner">
             {% for image in project.images %}
                <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
@@ -25,6 +27,7 @@
                </div>
             {% endfor %}
          </div>
+
          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Précédent</span>
