@@ -6,6 +6,7 @@ use App\Repository\InformationsRepository;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -45,11 +46,16 @@ class Informations
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
-    private $picture;
+    private $image;
 
     /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="picture")
-     * @var File
+     * @Vich\UploadableField(mapping="images", fileNameProperty="image")
+     * @var File|null
+     * @Assert\File(maxSize = Image::MAX_SIZE,
+     *     maxSizeMessage="Le fichier est trop gros  ({{ size }} {{ suffix }}),
+     * il ne doit pas dépasser {{ limit }} {{ suffix }}",
+     *     mimeTypes = {"image/jpeg", "image/jpg", "image/gif","image/png"},
+     *     mimeTypesMessage = "Veuillez entrer un type de fichier valide: jpg, jpeg, png ou gif.")
      */
     private $imageFile;
 
@@ -58,11 +64,6 @@ class Informations
      * @var DateTime
      */
     private $updatedAt;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $imageName;
 
     public function getId(): ?int
     {
@@ -135,14 +136,14 @@ class Informations
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getImage(): ?string
     {
-        return $this->picture;
+        return $this->image;
     }
 
-    public function setPicture(?string $picture): self
+    public function setImage(?string $image): self
     {
-        $this->picture = $picture;
+        $this->image = $image;
 
         return $this;
     }
@@ -159,15 +160,4 @@ class Informations
         return $this;
     }
 
-    public function getImageName(): ?string
-    {
-        return $this->imageName;
-    }
-
-    public function setImageName(?string $imageName): self
-    {
-        $this->imageName = $imageName;
-
-        return $this;
-    }
 }
