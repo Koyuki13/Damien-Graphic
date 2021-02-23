@@ -88,3 +88,12 @@ select:-webkit-autofill:focus {
     box-shadow : none;
   }
 }
+
+.navbar-light .navbar-brand {
+  font-family : $nav-font;
+  color       : $light-color;
+
+  .navbar-brand-img {
+    width : 50px;
+  }
+}
