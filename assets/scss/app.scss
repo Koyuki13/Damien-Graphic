@@ -80,3 +80,11 @@ select:-webkit-autofill:focus {
   outline                 : none;
   appearance              : none;
 }
+
+.btn.no-shadow-focus {
+  border : none;
+
+  &:focus, &:target {
+    box-shadow : none;
+  }
+}

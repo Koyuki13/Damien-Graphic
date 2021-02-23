@@ -1,6 +1,7 @@
-@import "vars";
-
-.footer {
-  font-family: $nav-font;
-  background-color: $light-color;
+footer {
+  font-family      : $nav-font;
+  background-color : $parts-color;
+  height           : 50px;
+  font-size        : $font-size;
+  margin-top       : $size-lg;
 }
