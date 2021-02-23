@@ -6,14 +6,14 @@
 {% block main %}
     <div class="home d-lg-flex">
         <div class="left col-12 col-lg-6 d-none d-md-block ">
-            <img src="{{ asset('uploads/images/unsplash.jpg') }}" alt="image de fond">
+            <img src="{{ asset('uploads/images/unsplash.jpg') }}" alt="image de fond" class="img-cover">
         </div>
         <div class="right col-12 col-lg-6">
             <div class="image-profile mt-5">
-                <img src="{{ asset('uploads/images/' ~ info.picture) }}" alt="{{ info.imageName }}">
+                <img src="{{ asset('uploads/images/' ~ info.image) }}" alt="{{ info.image }}">
             </div>
             <div class="body-progile m-md-5">
-                <h1>{{ info.fullname }} - {{ info.job }}</h1>
+                <h1 class="text-center">{{ info.fullname }} - {{ info.job }}</h1>
                 <p>
                     {{ info.description | raw | nl2br }}
                 </p>

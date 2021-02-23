@@ -4,6 +4,9 @@
 @import "flash";
 @import "service";
 @import "call_to_action";
+@import "projet";
+@import "detail_projet";
+@import "footer";
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -76,4 +79,12 @@ select:-webkit-autofill:focus {
   transition              : background-color 5000s ease-in-out 0s;
   outline                 : none;
   appearance              : none;
+}
+
+.btn.no-shadow-focus {
+  border : none;
+
+  &:focus, &:target {
+    box-shadow : none;
+  }
 }

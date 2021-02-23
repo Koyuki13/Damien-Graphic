@@ -27,3 +27,18 @@
     transform : translateY(0);
   }
 }
+
+#carouselExampleIndicators.carousel.slide {
+  width      : 100%;
+  max-width  : 75vh;
+  margin-top : 50px;
+
+  @media only screen and (min-width : 768px) {
+    .carousel-inner {
+      padding       : 12px;
+      border        : 1px solid gray;
+      border-radius : 5px;
+      box-shadow    : 0 0 7px #a99e9e;
+    }
+  }
+}
