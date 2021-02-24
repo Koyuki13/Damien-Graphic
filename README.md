@@ -2,7 +2,7 @@
 
 Description
 
-Ce projet est un site vitrine réaliser pour un graphiste indépendant.
+Ce projet est un site vitrine réalisé pour un graphiste indépendant.
 
 ### Installation
 
