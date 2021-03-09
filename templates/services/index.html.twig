@@ -14,10 +14,10 @@
                <p>{{ service.description | raw | nl2br }}</p>
             </div>
          </article>
-         {% if services|length > 2 and loop.index == 2 %}
+         {% if services|length >= 2 and loop.index == 2 %}
             {% include 'parts/callToAction.html.twig' %}
-         {% elseif services|length <= 2 %}
-            {% include 'parts/callToAction.html.twig' %}
+{#         {% elseif services|length < 2 %}#}
+{#            {% include 'parts/callToAction.html.twig' %}#}
          {% endif %}
       {% endfor %}
    </div>
