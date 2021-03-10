@@ -2,6 +2,11 @@
 @import "home";
 @import "contact";
 @import "flash";
+@import "service";
+@import "call_to_action";
+@import "projet";
+@import "detail_projet";
+@import "footer";
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -28,6 +33,11 @@ body {
   background-color : $background-color;
   min-height       : 100vh;
   font-size        : $font-size;
+}
+
+.main {
+  max-width : 2000px;
+  margin    : auto;
 }
 
 img {
@@ -69,4 +79,21 @@ select:-webkit-autofill:focus {
   transition              : background-color 5000s ease-in-out 0s;
   outline                 : none;
   appearance              : none;
+}
+
+.btn.no-shadow-focus {
+  border : none;
+
+  &:focus, &:target {
+    box-shadow : none;
+  }
+}
+
+.navbar-light .navbar-brand {
+  font-family : $nav-font;
+  color       : $light-color;
+
+  .navbar-brand-img {
+    width : 50px;
+  }
 }
