@@ -28,6 +28,19 @@ form.contact-form {
   align-items    : center;
   flex-direction : column;
 
+  .social-media {
+    display : flex;
+    margin  : $size-md auto;
+
+    a {
+      margin : $size;
+
+      img {
+        width : 50px;
+      }
+    }
+  }
+
   .contact-wrapper {
     border           : 1px solid $dark-color;
     padding          : $size-lg 0;
