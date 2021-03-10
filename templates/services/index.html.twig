@@ -6,7 +6,7 @@
       {% for service in services %}
          <article class="row my-5 {{ loop.index % 2 == 0 ? 'odd' : '' }}">
             <div class="col-md-4 col-12">
-               <img class="m-0 m-md-3" src="{{ asset('uploads/images/' ~ service.image) | imagine_filter('sizeOne') }}"
+               <img class="m-0" src="{{ asset('uploads/images/' ~ service.image) | imagine_filter('sizeOne') }}"
                     alt="{{ service.name }}">
             </div>
             <div class="col-md-8 col-12 mt-3 body-service">
@@ -14,9 +14,7 @@
                <p>{{ service.description | raw | nl2br }}</p>
             </div>
          </article>
-         {% if services|length > 2 and loop.index == 2 %}
-            {% include 'parts/callToAction.html.twig' %}
-         {% elseif services|length <= 2 %}
+         {% if loop.index == 1 %}
             {% include 'parts/callToAction.html.twig' %}
          {% endif %}
       {% endfor %}
