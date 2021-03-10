@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block title 'Mes services' %}
 {% block main %}
-   <div class="container-fluid mt-4">
-      <h1 class="text-center">Mes services</h1>
+   <div class="container-fluid mt-4 service">
+      <header class="header">
+         <img src="{{ asset('uploads/images/banner.png') }}" alt="Mes Services">
+      </header>
       {% for service in services %}
          <article class="row my-5 {{ loop.index % 2 == 0 ? 'odd' : '' }}">
             <div class="col-md-4 col-12">
